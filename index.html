@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/style.css">
+    <!--  Importa o arquivo CSS externo -->
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!--  Importa a biblioteca Font Awesome, que contém ícones prontos (play, reset, flag, etc.). -->
+
+    <title>cronômetro</title>
+</head>
+<body>
+    <div id="cronometro">
+
+         <h1 ">cronômetro</h1> 
+
+        <h2 id="timer">00:00:00:00</h2> <!-- Mostra o tempo do cronômetro (horas:minutos:segundos:milissegundos). -->
+
+        <!-- id="timer" será usado no JavaScript para atualizar esse valor dinamicamente. -->
+
+        <div id="actions"> <!-- Agrupa os botões de ação do cronômetro. -->
+            <button id="reset"> <!--  Modificar os nomes -->
+                <i class="fa-solid fa-redo"></i> <!--  O <i> contém o ícone "redo" da biblioteca Font Awesome. -->
+
+            </button>
+            <button id="power" action="start"> <!--  Será usado no JS para controlar "play/pause". É um atributo personalizado, indicando o estado inicial do botão. -->
+                <i class="fa-solid fa-play"></i> 
+
+            </button>
+            <button id="mark">
+                <i class="fa-solid fa-list"></i>
+            </button>
+        </div>
+
+        <div id="marks-list"></div> <!--  Área onde serão exibidas as voltas marcadas (lista gerada dinamicamente pelo JS). -->
+    </div>
+    <script src="javascript/script.js"></script> <!--  Importa o arquivo JavaScript externo que vai controlar toda a lógica do cronômetro. -->
+</body>
+</html>

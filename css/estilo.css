@@ -1,0 +1,214 @@
+/* Seletor Universal: Aplica-se a TODOS os elementos (*) */
+* {
+    /* Define a margem externa de todos os elementos para 0 (remove o espaço externo padrão do navegador) */
+    margin: 0;
+    /* Define o preenchimento interno de todos os elementos para 0 (remove o espaço interno padrão) */
+    padding: 0;
+    /* Define como a largura e altura são calculadas, incluindo bordas e preenchimento na largura/altura total. ESSENCIAL para layout previsível. */
+    box-sizing: border-box;
+    /* Define uma lista de fontes preferenciais, começando pelas do sistema operacional para um carregamento rápido e nativo. */
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
+}
+
+/* ---------------------------------------------------------------------------------------------------------------------------------------------------------- */
+
+/* Estilos para o corpo da página (body) */
+body {
+    /* Define o container como um flex container (permite alinhamento fácil dos filhos) */
+    display: flex;
+    /* Centraliza o conteúdo horizontalmente */
+    justify-content: center;
+    /* Centraliza o conteúdo verticalmente */
+    align-items: center;
+    /* Define a altura do corpo como 100% da altura da viewport (janela de visualização) */
+    height: 100vh;
+    /* Garante que não haja margem no corpo (já feito no *, mas é uma boa prática) */
+    margin: 0;
+    /* Define o fundo como um cinza escuro */
+    background: #181818; 
+    /* Define a cor padrão do texto como um cinza claro */
+    color: #f2f2f2;
+}
+
+/* ---------------------------------------------------------------------------------------------------------------------------------------------------------- */
+
+/* Estilos para o container principal do cronômetro (elemento com id="cronometro") */
+#cronometro {
+    /* Define como um flex container */
+    display: flex;
+    /* Organiza os itens em uma coluna (verticalmente) */
+    flex-direction: column;
+    /* Centraliza os itens dentro do container horizontalmente */
+    align-items: center;
+    /* Cor de fundo ligeiramente mais clara que o body */
+    background: #222;
+    /* Adiciona preenchimento interno (espaço entre o conteúdo e a borda) */
+    padding: 2rem;
+    /* Arredonda os cantos */
+    border-radius: 14px;
+    /* Adiciona uma sombra para criar um efeito de profundidade */
+    box-shadow: 0 6px 20px rgba(0,0,0,0.5);
+}
+
+/* ---------------------------------------------------------------------------------------------------------------------------------------------------------- */
+
+/* Estilos para o título (h1) */
+h1 {
+    /* Define o tamanho da fonte */
+    font-size: 1.5rem;
+    /* Define a cor do texto */
+    color: #ccc;
+    /* Define a fonte como negrito */
+    font-weight: bold;
+    /* Define as margens: 0 (topo), auto (direita - para centralizar), 1.2rem (baixo), auto (esquerda - para centralizar) */
+    margin: 0 auto 1.2rem auto;
+}
+
+/* ---------------------------------------------------------------------------------------------------------------------------------------------------------- */
+
+/* Estilos para o display do tempo (elemento com id="timer") */
+#timer {
+    /* Cor de fundo mais escura para destacar o display */
+    background: #2a2a2a;
+    /* Adiciona uma borda sólida de 3px, cinza mais escuro */
+    border: 3px solid #444;
+    /* Arredonda os cantos */
+    border-radius: 10px;
+    /* Adiciona preenchimento interno (vertical 1rem, horizontal 2rem) */
+    padding: 1rem 2rem;
+    /* Tamanho de fonte grande */
+    font-size: 2.4rem;
+    /* Seminegrito */
+    font-weight: 600;
+    /* Espaço abaixo do display */
+    margin-bottom: 1.5rem;
+    /* Ocupa 100% da largura disponível no pai */
+    width: 100%;
+    /* Centraliza o texto */
+    text-align: center;
+    /* Define uma fonte monoespaçada, ideal para cronômetros e códigos */
+    font-family: 'Courier New', Courier, monospace; /* fonte monoespaçada */
+}
+
+/* ---------------------------------------------------------------------------------------------------------------------------------------------------------- */
+
+/* Estilos para o container dos botões (elemento com id="actions") */
+#actions {
+    /* Define como um flex container */
+    display: flex;
+    /* Adiciona espaço entre os itens flexíveis */
+    gap: 0.6rem;
+    /* Ocupa 100% da largura disponível no pai */
+    width: 100%;
+}
+
+/* ---------------------------------------------------------------------------------------------------------------------------------------------------------- */
+
+/* Estilos para os botões dentro do container #actions */
+#actions button {
+    /* Faz com que cada botão cresça igualmente para preencher o espaço (distribui a largura) */
+    flex-grow: 1;
+    /* Define uma altura fixa para os botões */
+    height: 45px;
+    /* Remove a borda padrão */
+    border: none;
+    /* Arredonda os cantos */
+    border-radius: 8px;
+    /* Muda o cursor para indicar que é clicável */
+    cursor: pointer;
+    /* Define o tamanho da fonte */
+    font-size: 1.1rem;
+    /* Adiciona uma transição suave para as propriedades 'transform' e 'background' */
+    transition: transform 0.1s ease, background 0.2s ease;
+}
+
+/* Estilos para quando o mouse passar por cima dos botões */
+#actions button:hover {
+    /* Aumenta ligeiramente o tamanho do botão (efeito de "zoom" ou levantamento) */
+    transform: scale(1.05);
+}
+
+/* ---------------------------------------------------------------------------------------------------------------------------------------------------------- */
+
+/* Estilos específicos para o botão de Reset (id="reset") */
+#reset {
+    /* Cor de fundo vermelha clara (indicando reset/perigo) */
+    background: #ffdada;
+    /* Cor do texto vermelha escura */
+    color: #b91c1c;
+}
+/* Estilos para o hover do botão de Reset */
+#reset:hover {
+    /* Cor de fundo ligeiramente mais escura no hover */
+    background: #fca5a5;
+}
+
+/* ---------------------------------------------------------------------------------------------------------------------------------------------------------- */
+
+/* Estilos específicos para o botão de Ligar/Parar (id="power") */
+#power {
+    /* Cor de fundo verde clara (indicando iniciar/sucesso) */
+    background: #e7fbe7;
+    /* Cor do texto verde escura */
+    color: #22aa55;
+}
+/* Estilos para o hover do botão de Ligar/Parar */
+#power:hover {
+    /* Cor de fundo ligeiramente mais escura no hover */
+    background: #bbf7d0;
+}
+
+/* ---------------------------------------------------------------------------------------------------------------------------------------------------------- */
+
+/* Estilos específicos para o botão de Marcar Volta (id="mark") */
+#mark {
+    /* Cor de fundo azul clara (indicando ação/informativo) */
+    background: #dbeafe;
+    /* Cor do texto azul escura */
+    color: #2563eb;
+}
+/* Estilos para o hover do botão de Marcar Volta */
+#mark:hover {
+    /* Cor de fundo ligeiramente mais escura no hover */
+    background: #bfdbfe;
+}
+
+/* ---------------------------------------------------------------------------------------------------------------------------------------------------------- */
+
+/* Estilos para a lista de voltas (elemento com id="marks-list") */
+#marks-list {
+    /* Espaço acima da lista */
+    margin-top: 1.5rem;
+    /* Define como um flex container */
+    display: flex;
+    /* Organiza os itens em uma coluna (verticalmente) */
+    flex-direction: column;
+    /* Espaço entre os itens da lista */
+    gap: 0.6rem;
+    /* Ocupa 100% da largura disponível no pai */
+    width: 100%;
+    /* Altura máxima da lista */
+    max-height: 160px;
+    /* Adiciona uma barra de rolagem vertical se o conteúdo exceder a altura máxima */
+    overflow-y: auto;
+}
+
+/* ---------------------------------------------------------------------------------------------------------------------------------------------------------- */
+
+/* Estilos para cada item/parágrafo dentro da lista de voltas */
+#marks-list p {
+    /* Adiciona preenchimento interno */
+    padding: 0.5rem 0.7rem;
+    /* Arredonda os cantos */
+    border-radius: 6px;
+    /* Cor de fundo ligeiramente escura */
+    background: #2a2a2a;
+    /* Texto em negrito */
+    font-weight: bold;
+    /* Tamanho da fonte */
+    font-size: 0.9rem;
+    /* Usa a mesma fonte monoespaçada do timer para manter a consistência */
+    font-family: 'Courier New', Courier, monospace;
+    /* Cor do texto cinza claro */
+    color: #ddd;
+}
